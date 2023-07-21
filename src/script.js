@@ -1,24 +1,21 @@
 const dataContainer = document.getElementById("data");
-const graphData = [];
-const graphDays = [];
-const graphValues = [];
 const ctx = document.getElementById("myChart");
+const graphData = [];
 
 createChart();
 
 async function createChart() {
   await getData();
-  getDays();
-  getValues();
-  console.log(graphDays[day - 1]);
+  currentDay = graphData[currentDay - 1].day;
+
   new Chart(ctx, {
     type: "bar",
     data: {
-      labels: [...graphDays],
+      labels: [...graphData.map((obj) => obj.day)],
       datasets: [
         {
           label: "$",
-          data: [...graphValues],
+          data: [...graphData.map((obj) => obj.amount)],
           borderWidth: 0,
           borderRadius: 4,
           backgroundColor: "#EC775F",
@@ -65,17 +62,3 @@ async function getData() {
     graphData.unshift(...data);
   }
 }
-
-function getDays() {
-  for (let i = 0; i < graphData.length; i++) {
-    graphDays.push(graphData[i].day);
-  }
-}
-function getValues() {
-  for (let i = 0; i < graphData.length; i++) {
-    graphValues.push(graphData[i].amount);
-  }
-}
-
-const d = new Date();
-let day = d.getDay();
