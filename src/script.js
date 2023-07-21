@@ -6,7 +6,6 @@ createChart();
 
 async function createChart() {
   await getData();
-  currentDay = graphData[currentDay - 1].day;
 
   new Chart(ctx, {
     type: "bar",
