@@ -21,6 +21,8 @@ body {
     border-radius: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s;
 
     h2 {
       color: white;
@@ -30,6 +32,9 @@ body {
       font-size: 1rem;
       margin-bottom: 0.5rem;
     }
+  }
+  .component__header:hover {
+    background-color: $Cyan;
   }
 
   .component__body {

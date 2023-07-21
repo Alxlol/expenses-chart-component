@@ -59,7 +59,7 @@ async function createChart() {
 }
 
 async function getData() {
-  const response = await fetch("../data.json");
+  const response = await fetch("data/data.json");
   const data = await response.json();
   if (response.ok) {
     graphData.unshift(...data);

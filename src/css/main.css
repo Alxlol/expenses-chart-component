@@ -42,6 +42,8 @@ body {
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s;
 }
 .component__container .component__header h2 {
   color: white;
@@ -49,6 +51,9 @@ body {
 .component__container .component__header p {
   font-size: 1rem;
   margin-bottom: 0.5rem;
+}
+.component__container .component__header:hover {
+  background-color: hsl(186, 34%, 60%);
 }
 .component__container .component__body {
   background-color: white;
